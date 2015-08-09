@@ -1,15 +1,15 @@
 
-var React = require('react');
+let React = require('react');
 
-var CartItem = require('./CartItem.jsx');
-var CartList = React.createClass({
+let CartItem = require('./CartItem.jsx');
+let CartList = React.createClass({
 
   propTypes: {
     cart: React.PropTypes.object.isRequired
   },
 
   render: function() {
-    var items = this.props.cart.items;
+    let items = this.props.cart.items;
     return (
       <div className="cart-items">
         {() => {
