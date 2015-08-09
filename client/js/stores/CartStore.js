@@ -1,6 +1,6 @@
 
-let EventEmitter = require('events').EventEmitter;
 let _            = require('lodash');
+let EventEmitter = require('events').EventEmitter;
 let dispatcher   = require('../dispatcher');
 
 
@@ -12,10 +12,12 @@ let CartStore = Object.assign({}, EventEmitter.prototype, {
     dispatcher.register((action) => {
       switch(action.actionType) {
         case 'cart_add_item':
-          this.onAddItem(action.payload);
+          let { item } = action.payload.item;
+          this.onAddItem(item);
           break;
         case 'cart_remove_item':
-          this.onRemoveItem(action.payload);
+          let { id } = action.payload;
+          this.onRemoveItem(id);
           break;
         case 'cart_update_qty':
           this.onUpdateQty(action.payload);
@@ -46,7 +48,7 @@ let CartStore = Object.assign({}, EventEmitter.prototype, {
       .reduce((pre, cur) => pre + cur, 0);
   },
 
-  onAddItem: function({ item }) {
+  onAddItem: function(item) {
     if(!this.items[item.id]) {
       this.items[item.id] = item;
     }
@@ -59,7 +61,7 @@ let CartStore = Object.assign({}, EventEmitter.prototype, {
     this.emit('change');
   },
 
-  onRemoveItem: function({ id }) {
+  onRemoveItem: function(id) {
     delete this.items[id];
     this.emit('change');
   },

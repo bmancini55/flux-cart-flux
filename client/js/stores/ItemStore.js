@@ -1,6 +1,6 @@
 
-let EventEmitter = require('events').EventEmitter;
 let _            = require('lodash');
+let EventEmitter = require('events').EventEmitter;
 let dispatcher   = require('../dispatcher');
 
 let ItemStore = Object.assign({}, EventEmitter.prototype, {
@@ -11,7 +11,8 @@ let ItemStore = Object.assign({}, EventEmitter.prototype, {
     dispatcher.register((action) => {
       switch(action.actionType) {
         case 'items_load_success':
-          this.onItemsLoaded(action.payload);
+          let { items } = action.payload;
+          this.onItemsLoaded(items);
           break;
       }
     });
@@ -25,7 +26,7 @@ let ItemStore = Object.assign({}, EventEmitter.prototype, {
     this.removeListener('change', callback);
   },
 
-  onItemsLoaded: function({ items }) {
+  onItemsLoaded: function(items) {
     this.items = _.indexBy(items, 'id');
     this.emit('change');
   },
