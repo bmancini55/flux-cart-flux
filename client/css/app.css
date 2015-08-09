@@ -153,3 +153,7 @@
 .cart-item-info.cart-item-qty input {
   width: 30px;
 }
+
+.invalid {
+  border: 1px solid #ee3333;
+}

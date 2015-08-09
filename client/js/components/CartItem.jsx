@@ -11,6 +11,7 @@ let CartItem = React.createClass({
   render: function() {
     let item = this.props.item;
     let qty  = this.props.item.qty;
+    let qtyClass = item.qtyInvalid ? 'invalid' : '';
     return (
       <div className="cart-item">
         <table className="cart-item-container">
@@ -42,7 +43,7 @@ let CartItem = React.createClass({
                     <div className="cart-item-info cart-item-qty">
                       <div className="info-label">Qty</div>
                       <div className="info-value">
-                        <input type="text" defaultValue={qty} onBlur={this.onQtyBlur} />
+                        <input type="text" value={qty} onChange={this.onQtyChange} className={qtyClass} />
                       </div>
                     </div>
                   </td>
@@ -59,13 +60,8 @@ let CartItem = React.createClass({
     CartActions.removeItem(this.props.item.id);
   },
 
-  onQtyBlur: function(e) {
-    let value = parseInt(e.target.value);
-    if(!isNaN(value)) {
-      CartActions.updateQty(this.props.item.id, value);
-    } else {
-      this.forceUpdate();
-    }
+  onQtyChange: function(e) {
+    CartActions.updateQty(this.props.item.id, e.target.value);
   }
 
 });
