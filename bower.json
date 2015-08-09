@@ -1,0 +1,16 @@
+{
+  "name": "flux-cart",
+  "version": "0.0.0",
+  "homepage": "https://github.com/bmancini55/flux-cart",
+  "authors": [
+    "Brian Mancini <bmancini@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

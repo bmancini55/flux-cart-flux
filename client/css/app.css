@@ -1,0 +1,155 @@
+
+.page-contents {
+  margin-top: 20px;
+}
+
+.shop-item {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.item-img {
+  padding: .5rem;
+  background-color: #333;
+  border: 1px solid #666;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.shop-item .shop-item-title {
+  font-size: 1.75rem;
+  border-top: 1px dotted #999;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.shop-item .shop-item-subtitle {
+  font-size: 1rem;
+}
+
+
+.cart-popover:after, .cart-popover:before {
+  bottom: 100%;
+  left: 85%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.cart-popover:after {
+  border-color: rgba(238, 238, 238, 0);
+  border-bottom-color: #eee;
+  border-width: 15px;
+  margin-left: -15px;
+}
+.cart-popover:before {
+  border-color: rgba(204, 204, 204, 0);
+  border-bottom-color: #ccc;
+  border-width: 16px;
+  margin-left: -16px;
+}
+
+.cart-popover {
+  position: absolute;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-left: -230px;
+  margin-top: 35px;
+  z-index: 100;
+}
+
+.cart-popover-title {
+  background-color: #eee;
+  padding: 1rem;
+  font-weight: bold;
+}
+
+.cart-popover-content {
+  padding: 1rem;
+}
+
+.cart-popover-footer {
+  padding: 1rem 1rem .5rem 1rem;
+  background-color: #eee;
+}
+
+.cart-items {
+  width: 300px;
+}
+
+.cart-item {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+.cart-item:not(:last-child) {
+  border-bottom: 1px dotted #c0c0c0;
+}
+
+.cart-item-container {
+  width: 100%;
+}
+
+.cart-item-img {
+  width: 80px;
+}
+
+.cart-item-data {
+  vertical-align: top;
+  padding-left: 1rem;
+}
+
+
+.cart-item-details {
+  width: 100%;
+}
+
+.cart-item-details-header {
+  font-weight: bold;
+  font-size: 1.5rem;
+  vertical-align: top;
+  padding-bottom: 1rem;
+}
+
+.cart-item-delete {
+  padding-top: .25rem;
+  vertical-align: top;
+  font-size: 1.1rem;
+  color: #999;
+}
+.cart-item-delete span:hover {
+  color: #ee3333;
+}
+
+.cart-item-delete {
+  text-align: right;
+}
+
+.cart-item-info {
+  display: inline-block;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+}
+
+.cart-item-info .info-label {
+  font-weight: bold;
+}
+
+.cart-item-info.cart-item-id {
+  width: 80px;
+}
+
+.cart-item-info.cart-item-price {
+  width: 50px;
+}
+
+.cart-item-info.cart-item-qty {
+  width: 30px;
+}
+.cart-item-info.cart-item-qty input {
+  width: 30px;
+}
